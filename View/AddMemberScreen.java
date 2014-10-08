@@ -9,7 +9,7 @@ public class AddMemberScreen {
 
 	public void numberPrompt() {
 
-		System.out.print("Enter personal number: ");
+		System.out.print("Enter personal number (YYMMDD-NNNN): ");
 	}
 
 	public void boatTypePrompt() {
@@ -23,5 +23,9 @@ public class AddMemberScreen {
 
 	public void boatCountPrompt() {
 		System.out.print("Enter number of boats: ");
+	}
+	
+	public void confirmPrompt(){
+		System.out.println("DONE!\n");
 	}
 }

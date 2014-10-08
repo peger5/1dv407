@@ -27,7 +27,7 @@ public class AddMember {
 		s.boatCountPrompt();
 		countBoats = scan.nextInt();
 		
-		Member member = new Member(memberName,memberPIN);
+		Member member = new Member(memberName,memberPIN,list);
 		
 		for(int i=1; i<=countBoats;i++){
 			s.boatTypePrompt();
@@ -54,6 +54,7 @@ public class AddMember {
 		}
 		//scan.close();
 		list.add(member);
+		s.confirmPrompt();
 //		System.out.println(memberName);
 //		System.out.println(memberPIN);
 //		System.out.println(countBoats);

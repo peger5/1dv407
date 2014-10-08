@@ -9,13 +9,14 @@ public class Member {
 	private String name;
 	private String personalNumber;
 	private int memberNumber;
+	private final int startNumber = 10000; 
 	private LinkedList<Boat> boats = new LinkedList<Boat>();
 
-	public Member(String a_name, String a_personalNumber) {
+	public Member(String a_name, String a_personalNumber, List a_list) {
 
 		this.name = a_name;
 		this.personalNumber = a_personalNumber;
-		// this.memberNumber = personalNumber.hashCode();
+		this.memberNumber = startNumber + a_list.size();
 
 	}
 
