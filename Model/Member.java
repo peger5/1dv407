@@ -9,14 +9,14 @@ public class Member {
 	private String name;
 	private String personalNumber;
 	private int memberNumber;
-	private LinkedList<Boat> boats;
+	private LinkedList<Boat> boats = new LinkedList<Boat>();
 
 	public Member(String a_name, String a_personalNumber) {
 
 		this.name = a_name;
 		this.personalNumber = a_personalNumber;
-		//this.memberNumber = personalNumber.hashCode();
-		this.boats = new LinkedList<Boat>();
+		// this.memberNumber = personalNumber.hashCode();
+
 	}
 
 	public void editName(String m_name) {
@@ -38,16 +38,28 @@ public class Member {
 	public int getMemberNumber() {
 		return memberNumber;
 	}
-	
+
 	public int getBoatsNumber() {
 		return boats.size();
 	}
-	
-	public void addBoat(Type m_type, double m_lenght){
-		boats.add(new Boat(m_type,m_lenght));
+
+	public void addBoat(Type m_type, double m_lenght) {
+		Boat b = new Boat(m_type, m_lenght);
+		this.boats.add(b);
 	}
-	
-	public void deleteBoat(){
-		
+
+	public String printBoats() {
+		StringBuilder buff = new StringBuilder();
+		for (int i = 0; i < boats.size(); i++) {
+			buff.append(boats.get(i).getBoatType());
+			buff.append(" ");
+			buff.append(boats.get(i).getBoatLength());
+			
+		}
+		return buff.toString();
+	}
+
+	public void deleteBoat() {
+
 	}
 }
