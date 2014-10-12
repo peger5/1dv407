@@ -14,7 +14,8 @@ public class SearchMember {
 		ss.searchPrompt();
 		searchQuery = scan.nextLine();
 		searchQuery = scan.nextLine();
-
+		
+		
 		for (int i = 0; i < list.size(); i++) {
 			if (searchQuery.equals(list.get(i).getPersonalNumber())) {
 				
@@ -25,8 +26,10 @@ public class SearchMember {
 				System.out.println(list.get(i).printBoats());
 
 			}
-			else ss.searchError();
+			else if(i==list.size()-1) ss.searchError();
+				
 		}
+		ss.pressEnterPrompt();
 
 	}
 

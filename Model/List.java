@@ -29,4 +29,9 @@ public class List {
 	public Member get(int i){
 		return list.get(i);
 	}
+	
+	public void remove(int i){
+		list.remove(i);
+		
+	}
 }

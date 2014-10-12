@@ -1,6 +1,6 @@
 package View;
 
-public class AddMemberScreen {
+public class AddMemberScreen extends Console{
 
 	public void namePrompt() {
 		System.out.print("Enter name: ");
@@ -25,7 +25,5 @@ public class AddMemberScreen {
 		System.out.print("Enter number of boats: ");
 	}
 	
-	public void confirmPrompt(){
-		System.out.println("DONE!\n");
-	}
+	
 }

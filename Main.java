@@ -10,8 +10,9 @@ public class Main {
 		View.AddMemberScreen addm = new View.AddMemberScreen();
 		View.ListScreen ls = new View.ListScreen();
 		View.SearchScreen ss = new View.SearchScreen();
+		View.EditScreen es = new View.EditScreen();
 		
-		m.menuOptions(l,s,addm,ls,ss);
+		m.menuOptions(l);
 	}
 
 }

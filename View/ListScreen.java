@@ -3,8 +3,10 @@ package View;
 public class ListScreen extends Console{
 	
 	public void showListOptions(){
-		System.out.println("1. Compact / Verbose view");
-		System.out.println("press 'Enter' to go back to main menu");
+		System.out.println("Press 'c' for Compact view");
+		System.out.println("Press 'v' for Verbose view");
+		System.out.println("Press 'e' to edit member");
+		System.out.println("press 'b' to go back to main menu");
 	}
 	
 	public void compactViewHeaders(){

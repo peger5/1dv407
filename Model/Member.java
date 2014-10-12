@@ -60,7 +60,11 @@ public class Member {
 		return buff.toString();
 	}
 
-	public void deleteBoat() {
-
+	public void deleteBoat(int i) {
+		boats.remove(i);
+	}
+	
+	public Boat getBoat(int i){
+		return boats.get(i);
 	}
 }

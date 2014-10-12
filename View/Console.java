@@ -15,5 +15,23 @@ public abstract class Console {
 			return 0;
 		}
 	}
+	
+	public boolean pressEnterToContinue() {
+		try {
+		int c = System.in.read();
+		if (c == '\r' || c == '\n') {
+		return true;
+		}
+
+		} catch (java.io.IOException e) {
+		System.out.println("" + e);
+
+		}
+		return false;
+		}
+	
+	public void confirmPrompt(){
+		System.out.println("DONE!\n");
+	}
 
 }
