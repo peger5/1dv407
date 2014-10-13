@@ -29,5 +29,7 @@ public class Boat {
 	public double getBoatLength() {
 		return boatLength;
 	}
+	
+	
 
 }

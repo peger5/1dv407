@@ -53,10 +53,12 @@ public class Member {
 		StringBuilder buff = new StringBuilder();
 		for (int i = 0; i < boats.size(); i++) {
 			buff.append(boats.get(i).getBoatType());
-			buff.append(" ");
+			buff.append(",");
 			buff.append(boats.get(i).getBoatLength());
+			buff.append(",");
 			
 		}
+		buff.deleteCharAt(buff.length()-1);
 		return buff.toString();
 	}
 
@@ -66,5 +68,13 @@ public class Member {
 	
 	public Boat getBoat(int i){
 		return boats.get(i);
+	}
+	
+	public LinkedList<Boat> getBoatList(){
+		return boats;
+	}
+	
+	public void setMemberNumber(int num){
+		memberNumber = num;
 	}
 }

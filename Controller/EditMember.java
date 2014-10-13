@@ -83,10 +83,24 @@ public class EditMember {
 
 	public void boatEditMenu(List list, EditScreen es) {
 		es.editBoatMenuPrompt();
+		MainMenu m = new MainMenu();
+
 		switch (es.GetInputChar()) {
 		case '1':
-			this.boatList(list, es);
-
+			this.changeBoatType(list, es);
+			m.menuOptions(list);
+			break;
+		case '2':
+			this.changeBoatLenght(list, es);
+			m.menuOptions(list);
+			break;
+		case '3':
+			this.deleteBoat(list, es);
+			m.menuOptions(list);
+			break;
+		case '4':
+			m.menuOptions(list);
+			break;
 		}
 	}
 
@@ -106,16 +120,41 @@ public class EditMember {
 		es.selectBoatToEdit();
 		boatPosition = scan.nextInt() - 1;
 	}
-	
-	public void changeBoatLenght(List list, EditScreen es){
+
+	public void changeBoatLenght(List list, EditScreen es) {
 		Scanner scan = new Scanner(System.in);
 		es.editBoatLenghtPrompt();
 		double newLenght = scan.nextDouble();
-		list.get(memberPosition).getBoat(boatPosition).editBoatLength(newLenght);
+		list.get(memberPosition).getBoat(boatPosition)
+				.editBoatLength(newLenght);
 	}
-	
-	public void changeBoatType(List list, EditScreen es){
+
+	public void changeBoatType(List list, EditScreen es) {
 		Scanner scan = new Scanner(System.in);
-		
+		es.editBoatTypePrompt();
+		int newType = scan.nextInt();
+		switch (newType) {
+		case 1:
+			list.get(memberPosition).getBoat(boatPosition)
+					.editBoatType(Type.Sailboat);
+			break;
+		case 2:
+			list.get(memberPosition).getBoat(boatPosition)
+					.editBoatType(Type.Motorsailer);
+			break;
+		case 3:
+			list.get(memberPosition).getBoat(boatPosition)
+					.editBoatType(Type.Kayak);
+			break;
+		case 4:
+			list.get(memberPosition).getBoat(boatPosition)
+					.editBoatType(Type.Other);
+			break;
+		}
+	}
+
+	public void deleteBoat(List list, EditScreen es) {
+		list.get(memberPosition).deleteBoat(boatPosition);
+		es.confirmPrompt();
 	}
 }

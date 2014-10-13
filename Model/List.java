@@ -31,7 +31,11 @@ public class List {
 	}
 	
 	public void remove(int i){
-		list.remove(i);
-		
+		list.remove(i);	
 	}
+	
+	public LinkedList<Member> getList(){
+		return list;
+	}
+	
 }

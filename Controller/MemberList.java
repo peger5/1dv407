@@ -5,8 +5,6 @@ import View.EditScreen;
 import View.ListScreen;
 
 public class MemberList {
-	
-	
 
 	public void printCompact(List list, ListScreen ls) {
 
@@ -41,10 +39,10 @@ public class MemberList {
 		ls.showListOptions();
 	}
 
-	public void editMember(List list, EditScreen es){
+	public void editMember(List list, EditScreen es) {
 		EditMember edit = new EditMember();
 		edit.selectMember(list, es);
-		switch(es.GetInputChar()){
+		switch (es.GetInputChar()) {
 		case '1':
 			edit.editMemberName(list, es);
 			break;
@@ -56,36 +54,39 @@ public class MemberList {
 			break;
 		case '4':
 			edit.boatList(list, es);
-			es.selectBoatToEdit();
+			edit.selectBoat(list, es);
 			edit.boatEditMenu(list, es);
 			break;
 		case '5':
 			edit.deleteMember(list, es);
 			break;
 		}
-	
+
 	}
-	
-	public void listMenu(List list, ListScreen ls){
-		
-		switch(ls.GetInputChar()){
+
+	public void listMenu(List list, ListScreen ls) {
+
+		switch (ls.GetInputChar()) {
 		case 'c':
 			this.printCompact(list, ls);
-//			if(ls.pressEnterToContinue())
-			listMenu(list,ls);
+			// if(ls.pressEnterToContinue())
+			listMenu(list, ls);
 			break;
 		case 'v':
 			this.printVerbose(list, ls);
-//			if(ls.pressEnterToContinue())
-			listMenu(list,ls);
+			// if(ls.pressEnterToContinue())
+			listMenu(list, ls);
 			break;
-		
+		case 'e':
+			EditScreen es = new EditScreen();
+			this.editMember(list, es);
+			break;
+
 		case 'b':
 			MainMenu m = new MainMenu();
 			m.menuOptions(list);
 			break;
 		}
 	}
-	
-	
+
 }

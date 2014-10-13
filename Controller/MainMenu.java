@@ -13,6 +13,7 @@ public class MainMenu {
 	private View.ListScreen ls = new View.ListScreen();
 	private View.SearchScreen ss = new View.SearchScreen();
 	private View.EditScreen es = new View.EditScreen();
+	private View.ExportImportScreen eis = new View.ExportImportScreen();
 			
 	
 	public void menuOptions(Model.List list) {
@@ -62,8 +63,24 @@ public class MainMenu {
 			smb.search(list, ss);
 			//ss.pressEnterPrompt();
 			if(ss.pressEnterToContinue()){
-			this.menuOptions(list);
+				this.menuOptions(list);
 			}
+			break;
+		case '4':
+			Controller.ExportImportRegister eir = new Controller.ExportImportRegister();
+			eis.exportOrImportPrompt();
+			switch(eis.GetInputChar()){
+			case 'e':
+				eir.writeCSVFile(list, eis);
+			//if(eis.pressEnterToContinue())
+				this.menuOptions(list);
+				break;
+			case 'i':
+				eir.readCSVFile(list,eis);
+				this.menuOptions(list);
+				break;
+			}
+			
 			break;
 		case 'q':
 			System.exit(-1);
